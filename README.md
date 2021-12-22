@@ -1,3 +1,7 @@
-# docker-java
+#### Simple project to demostation deploy java application to k8s using helm.
 
-ps: 70a247bddbe24d4b9398a24774eb27d4
+# app folder- contain the java spring boot with maven with a single action controller that return the free memory usage in container.
+
+# helm folder- contain the helm chart package with default template for k8s.
+
+# Jenkinsfile- the pipeline to build push and deploy the image to k8s.
