@@ -10,6 +10,6 @@ public class DemoController {
     @GetMapping("")
     public String get () {
     
-        return "Hello World";
+        return "Hello-World";
    }
 }
