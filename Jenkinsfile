@@ -46,6 +46,18 @@ pipeline {
 				sh 'docker push motiio/demo-java:${BUILD_NUMBER}'
 			}
 		}
-        
-    }
+		
+		
+	    stage('Apply Kubernetes files') {
+	        steps{
+	            dir('docker-java/helm') {
+                   withKubeConfig([credentialsId: 'kubeConfig', serverUrl: 'https://aks-pm8-dev-api-6f14079e.hcp.westeurope.azmk8s.io/']) {
+                   sh 'helm upgrade --namespace pm8-dev --install --recreate-pods --values ./demo-java/values.yaml --set image.repository=motiio/demo-java --set image.tag=${BUILD_NUMBER}  demo-java ./demo-java'
+                }
+                }
+	        }
+	        
+	    }
+		
+   }
 }
