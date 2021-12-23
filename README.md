@@ -1,4 +1,4 @@
-# Simple project to demostation deploy java application to k8s using helm.
+# Simple project to deploy java application to k8s.
 
 ### browse to `http://20.73.226.249/demo/` 
 
